@@ -27,15 +27,15 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="in"
-     inkscape:zoom="10.066006"
-     inkscape:cx="16.54082"
-     inkscape:cy="199.18526"
+     inkscape:zoom="2.0182676"
+     inkscape:cx="226.67955"
+     inkscape:cy="101.07678"
      inkscape:window-width="1512"
      inkscape:window-height="831"
      inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer2" /><defs
+     inkscape:current-layer="layer1-3" /><defs
      id="defs1"><clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath21"><rect
@@ -385,7 +385,7 @@
            x="36.5252"
            y="22.606001" /><g
            id="g19"
-           style="display:inline"
+           style="display:none"
            clip-path="url(#clipPath19)"><image
              width="11.555648"
              height="11.555648"
@@ -473,7 +473,7 @@
    style="font-weight:bold"
    id="tspan16">Item:</tspan> Ganlon/Salac Berry</tspan></text><text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, @wght=300,wdth=75';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 75, 'wght' 300;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:75.4623;display:inline;fill:#1a1a1a;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-size:4.58611px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Light Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:75.4623;display:inline;fill:#1a1a1a;stroke-width:0.264583"
        x="5.4965658"
        y="34.917183"
        id="text10"

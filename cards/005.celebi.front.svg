@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="in"
-     inkscape:zoom="20.088801"
-     inkscape:cx="17.696427"
-     inkscape:cy="207.03078"
+     inkscape:zoom="1.3950665"
+     inkscape:cx="174.54365"
+     inkscape:cy="96.052769"
      inkscape:window-width="1512"
      inkscape:window-height="831"
      inkscape:window-x="0"
@@ -385,7 +385,7 @@
            x="36.5252"
            y="22.606001" /><g
            id="g19"
-           style="display:inline"
+           style="display:none"
            clip-path="url(#clipPath19)"><image
              width="11.555648"
              height="11.555648"
@@ -473,7 +473,7 @@
    style="font-weight:bold"
    id="tspan16">Item:</tspan> None</tspan></text><text
        xml:space="preserve"
-       style="font-size:4.58611029px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:75.4623;display:inline;fill:#1a1a1a;stroke-width:0.264583;-inkscape-font-specification:'Bahnschrift, @wght=300,wdth=75';font-family:Bahnschrift;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variation-settings:'wght' 300, 'wdth' 75;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       style="font-size:4.58611029px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:75.4623;display:inline;fill:#1a1a1a;stroke-width:0.264583;-inkscape-font-specification:'Bahnschrift Light Condensed';font-family:Bahnschrift;font-weight:300;font-style:normal;font-stretch:condensed;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
        x="5.4965658"
        y="34.917183"
        id="text10"
