@@ -1,5 +1,5 @@
 # ecard-blisy
-Recreation of imablisy's e-reader cards in svg format
+Recreation of imablisy's e-reader cards in my format
 
 Based on materials published here https://github.com/notblisy/RUBYSAPPHIREDLC
 
