@@ -2,8 +2,10 @@ REGION ?= EN
 
 PAYLOADS := $(patsubst %.asm, build/$(REGION)/%.mev, $(filter-out payload/prologue.asm, $(wildcard payload/*.asm)))
 CARDS := $(patsubst %.asm, build/$(REGION)/%-01.raw, $(wildcard 78-C*.asm))
+BMPS := $(patsubst %.asm, build/$(REGION)/%.bmp, $(wildcard 78-C*.asm))
 
 all: $(CARDS) 
+bmp: $(BMPS)
 
 build/$(REGION)/payload/%.tx: payload/%.asm
 	python3 ../scripts/regionalize.py $< $@ $(REGION) $(REGION)
@@ -34,7 +36,10 @@ build/$(REGION)/78-C%.vpk: build/$(REGION)/78-C%.z80
 build/$(REGION)/78-C%-01.raw: build/$(REGION)/78-C%.vpk
 	../bin/nedc/v1.4/nedcmake -i $< -o $(subst -01.raw,,$@) -type 1 -region 1 -save 1 -fill 1 -name $(basename $(notdir $<))
 
-.PRECIOUS: build/$(REGION)/78-C%.tx build/$(REGION)/78-C%.z80 build/$(REGION)/78-C%.raw
+build/$(REGION)/78-C%.bmp: build/$(REGION)/78-C%-01.raw
+	../bin/nedc/v1.4.1/raw2bmp -i $< -o $(subst .bmp,,$@) -dpi 600
+
+.PRECIOUS: build/$(REGION)/78-C%.tx build/$(REGION)/78-C%.z80 build/$(REGION)/78-C%.raw build/$(REGION)/78-C%.bmp
 
 # Automatically create build dirs if missing
 BUILD_DIRS=build/EN/payload
