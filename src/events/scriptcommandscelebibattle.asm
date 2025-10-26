@@ -1,280 +1,122 @@
-MACRO callasm
-	db $23
-	dd \1
-	ENDM
-MACRO comparevar
-	db $22
-	dw \1, \2
-	ENDM
-MACRO clearflag
-	db $2A
-	dw \1
-	ENDM
-MACRO fadeout
-	db $37
-        dw \1
-	ENDM
-MACRO checkitemtype
+MACRO CALCSTATS
+	db $01
 	db $48
-	dw \1
+	db $00
+	db $00
+	db $01
+	db $4B
+	db $18
+	db $47
+        db $C0
+        db $45
+        db $00
+        db $03
+	db $B9
+	db $B1
+	db $03
+	db $08
 	ENDM
-MACRO hidesprite
-	db $53
-	dw \1
+MACRO CAPTURECELEBI
+	db $04
+	db $48
+	db $05
+	db $49
+	db $05
+	db $4A
+	db $64
+	db $26
+	db $05
+	db $4B
+	db $1F
+	db $78
+	db $77
+	db $43
+	db $39
+	db $44
+	db $0B
+	db $DF
+	db $70
+	db $47
+        db $EC
+        db $8D
+        db $02
+        db $02
+	db $60
+	db $43
+	db $00
+	db $03
+	db $14
+	db $00
+	db $00
+	db $04
+	db $DA
+	db $E8
+	db $02
+	db $02
 	ENDM
-MACRO sound
-       db $2F
-       dw \1
-       ENDM
-MACRO special
-       db $25
-       dw \1
-       ENDM
-MACRO pause
-       db $28
-       dw \1
-       ENDM
-MACRO applymovement
-        db $50
-        db \1 
-        dw \2
-        ENDM
-MACRO waitmovement
-        db $51
-        db \1 
-        ENDM
-MACRO playsong
-	db $33
-	dw \1
-	db \2
+MACRO CELEBICOPY1
+	db $02
+	db $48
+	db $03
+	db $49
+	db $03
+	db $4A
+	db $0B
+	db $DF
+	db $70
+	db $47
+	db $00
+	db $00
+	db $C0
+	db $45
+	db $00
+	db $03
+        db $EC
+        db $8D
+        db $02
+        db $02
+	db $14
+	db $00
+	db $00
+	db $04
 	ENDM
-MACRO waitstate
-           db $27
-           ENDM
-
-MACRO warp
-	db $3F
-	db \1
-	db \2
-	db \3
-	db \4
-        db \5
-	ENDM
-MACRO buffernumber
-	db $83
-	db \1
-	dw \2
-	ENDM
-MACRO closeonkeypress
+MACRO CHECKSUM
+	db $05
+	db $48
+	db $06
+	db $49
+	db $06
+	db $4A
+	db $0E
 	db $68
-	ENDM
-MACRO TEMPCELEBI
-        db $00
-        db $00
-        db $00
-        db $00
-        db $91
-        db $79
-        db $00
-        db $00
-        db $5E
-        db $7A
-        db $97
-        db $80
-        db $FF
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $01
-        db $02
-        db $51
-        db $8A
-        db $64
-        db $FF
-        db $00
-        db $00
-        db $00
-        db $00
-        db $CB
-        db $18
-        db $00
-        db $00
-        db $FB
-        db $00
-        db $00
-        db $00
-        db $30
-        db $02
-        db $00
-        db $00
-        db $00
-        db $46
-        db $00
-        db $00
-        db $5D
-        db $00
-        db $69
-        db $00
-        db $D7
-        db $00
-        db $DB
-        db $00
-        db $19
-        db $14
-        db $05
-        db $19
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $FF
-        db $0A
-        db $A1
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-	ENDM
-MACRO STRUCTURETABLEG
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $0C
-        db $0C
-        db $18
-        db $24
-        db $18
-        db $24
-        db $0C
-        db $0C
-        db $18
-        db $24
-        db $18
-        db $24
-        db $0C
-        db $0C
-        db $18
-        db $24
-        db $18
-        db $24
-	ENDM
-MACRO STRUCTURETABLEA
-        db $0C
-        db $0C
-        db $18
-        db $24
-        db $18
-        db $24
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $18
-        db $24
-        db $0C
-        db $0C
-        db $24
-        db $18
-        db $18
-        db $24
-        db $0C
-        db $0C
-        db $24
-        db $18
-	ENDM
-MACRO STRUCTURETABLEE
-        db $18
-        db $24
-        db $0C
-        db $0C
-        db $24
-        db $18
-        db $18
-        db $24
-        db $0C
-        db $0C
-        db $24
-        db $18
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $24
-        db $18
-        db $24
-        db $18
-        db $0C
-        db $0C
-	ENDM
-MACRO STRUCTURETABLEM
-        db $24
-        db $18
-        db $24
-        db $18
-        db $0C
-        db $0C
-        db $24
-        db $18
-        db $24
-        db $18
-        db $0C
-        db $0C
-        db $24
-        db $18
-        db $24
-        db $18
-        db $0C
-        db $0C
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-        db $00
-	ENDM
-MACRO LOADSTOREPARTYAMOUNT
-        db $02
-        db $49
-        db $08
-        db $78
-        db $02
-        db $49
-        db $08
-        db $60
-        db $70
-        db $47
+	db $17
+	db $68
+	db $37
+	db $44
+	db $36
+	db $0C
+	db $37
+	db $44
+	db $3F
+	db $04
+	db $3F
+	db $0C
+	db $07
+	db $80
 	db $00
-	db $00
+	db $BD
         db $DC
-        db $E8
-        db $02
-        db $02
-        db $F4
-        db $91
-        db $02
-        db $02
+        db $45
+        db $00
+        db $03
+	db $34
+	db $8E
+	db $02
+	db $02
+	db $08
+	db $8E
+	db $02
+	db $02
 	ENDM
 MACRO COLORNG
 	db $10
@@ -370,6 +212,46 @@ MACRO COLORNG
 	db $02
 	db $02
         ENDM
+MACRO ENCRYPT
+	db $01
+	db $48
+	db $00
+	db $00
+	db $01
+	db $4B
+	db $18
+	db $47
+        db $C0
+        db $45
+        db $00
+        db $03
+	db $f1
+	db $C5
+	db $03
+	db $08
+	ENDM
+MACRO LOADSTOREPARTYAMOUNT
+        db $02
+        db $49
+        db $08
+        db $78
+        db $02
+        db $49
+        db $08
+        db $60
+        db $70
+        db $47
+	db $00
+	db $00
+        db $DC
+        db $E8
+        db $02
+        db $02
+        db $F4
+        db $91
+        db $02
+        db $02
+	ENDM
 MACRO MEMCPYSETUP
 	db $00
 	db $B5
@@ -395,6 +277,134 @@ MACRO MEMCPYSETUP
 	db $00
 	db $00
 	db $04
+	ENDM
+MACRO SRFIX
+	db $01
+	db $4D
+	db $01
+	db $4E
+	db $00
+	db $27
+	db $70
+	db $47
+	db $70
+	db $17
+	db $00
+	db $03
+	db $A9
+	db $33
+	db $00
+	db $03
+	ENDM
+MACRO SRTEST
+	db $00
+	db $DF
+	db $70
+	db $47
+	ENDM
+MACRO STRUCTURETABLEA
+        db $0C
+        db $0C
+        db $18
+        db $24
+        db $18
+        db $24
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $18
+        db $24
+        db $0C
+        db $0C
+        db $24
+        db $18
+        db $18
+        db $24
+        db $0C
+        db $0C
+        db $24
+        db $18
+	ENDM
+MACRO STRUCTURETABLEE
+        db $18
+        db $24
+        db $0C
+        db $0C
+        db $24
+        db $18
+        db $18
+        db $24
+        db $0C
+        db $0C
+        db $24
+        db $18
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $24
+        db $18
+        db $24
+        db $18
+        db $0C
+        db $0C
+	ENDM
+MACRO STRUCTURETABLEG
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $0C
+        db $0C
+        db $18
+        db $24
+        db $18
+        db $24
+        db $0C
+        db $0C
+        db $18
+        db $24
+        db $18
+        db $24
+        db $0C
+        db $0C
+        db $18
+        db $24
+        db $18
+        db $24
+	ENDM
+MACRO STRUCTURETABLEM
+        db $24
+        db $18
+        db $24
+        db $18
+        db $0C
+        db $0C
+        db $24
+        db $18
+        db $24
+        db $18
+        db $0C
+        db $0C
+        db $24
+        db $18
+        db $24
+        db $18
+        db $0C
+        db $0C
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
 	ENDM
 MACRO SUBSTRUCTURECPY
 	db $20
@@ -470,173 +480,85 @@ MACRO SUBSTRUCTURECPY
 	db $00
 	db $04
 	ENDM
-MACRO CHECKSUM
-	db $05
-	db $48
-	db $06
-	db $49
-	db $06
-	db $4A
-	db $0E
-	db $68
-	db $17
-	db $68
-	db $37
-	db $44
-	db $36
-	db $0C
-	db $37
-	db $44
-	db $3F
-	db $04
-	db $3F
-	db $0C
-	db $07
-	db $80
-	db $00
-	db $BD
-        db $DC
-        db $45
+MACRO TEMPCELEBI
         db $00
-        db $03
-	db $34
-	db $8E
-	db $02
-	db $02
-	db $08
-	db $8E
-	db $02
-	db $02
-	ENDM
-MACRO ENCRYPT
-	db $01
-	db $48
-	db $00
-	db $00
-	db $01
-	db $4B
-	db $18
-	db $47
-        db $C0
-        db $45
         db $00
-        db $03
-	db $f1
-	db $C5
-	db $03
-	db $08
-	ENDM
-MACRO CALCSTATS
-	db $01
-	db $48
-	db $00
-	db $00
-	db $01
-	db $4B
-	db $18
-	db $47
-        db $C0
-        db $45
         db $00
-        db $03
-	db $B9
-	db $B1
-	db $03
-	db $08
-	ENDM
-MACRO fadescreen
-	db $97
-	db \1
-	ENDM
-MACRO doanimation
-	db $9C
-	dw \1
-	ENDM
-MACRO CAPTURECELEBI
-	db $04
-	db $48
-	db $05
-	db $49
-	db $05
-	db $4A
-	db $64
-	db $26
-	db $05
-	db $4B
-	db $1F
-	db $78
-	db $77
-	db $43
-	db $39
-	db $44
-	db $0B
-	db $DF
-	db $70
-	db $47
-        db $EC
-        db $8D
+        db $00
+        db $91
+        db $79
+        db $00
+        db $00
+        db $5E
+        db $7A
+        db $97
+        db $80
+        db $FF
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $01
         db $02
+        db $51
+        db $8A
+        db $64
+        db $FF
+        db $00
+        db $00
+        db $00
+        db $00
+        db $CB
+        db $18
+        db $00
+        db $00
+        db $FB
+        db $00
+        db $00
+        db $00
+        db $30
         db $02
-	db $60
-	db $43
-	db $00
-	db $03
-	db $14
-	db $00
-	db $00
-	db $04
-	db $DA
-	db $E8
-	db $02
-	db $02
-	ENDM
-MACRO CELEBICOPY1
-	db $02
-	db $48
-	db $03
-	db $49
-	db $03
-	db $4A
-	db $0B
-	db $DF
-	db $70
-	db $47
-	db $00
-	db $00
-	db $C0
-	db $45
-	db $00
-	db $03
-        db $EC
-        db $8D
-        db $02
-        db $02
-	db $14
-	db $00
-	db $00
-	db $04
-	ENDM
-MACRO SRTEST
-	db $00
-	db $DF
-	db $70
-	db $47
-	ENDM
-MACRO SRFIX
-	db $01
-	db $4D
-	db $01
-	db $4E
-	db $00
-	db $27
-	db $70
-	db $47
-	db $70
-	db $17
-	db $00
-	db $03
-	db $A9
-	db $33
-	db $00
-	db $03
+        db $00
+        db $00
+        db $00
+        db $46
+        db $00
+        db $00
+        db $5D
+        db $00
+        db $69
+        db $00
+        db $D7
+        db $00
+        db $DB
+        db $00
+        db $19
+        db $14
+        db $05
+        db $19
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $FF
+        db $0A
+        db $A1
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
+        db $00
 	ENDM

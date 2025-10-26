@@ -1,7 +1,59 @@
 INCLUDE "../macros.asm"
 INCLUDE "../constants/items.asm"
 INCLUDE "../constants/scriptcommands.asm"
-INCLUDE "./scriptcommandskyogre.asm"
+  	
+MACRO GAMEORIGIN
+        db $02
+        db $48
+        db $25
+        db $21
+        db $02
+        db $4B
+        db $03
+        db $A2
+        db $18
+        db $47
+        db $00
+        db $00
+        db $C0
+        db $45
+        db $00
+        db $03
+        db $ED
+        db $D2
+        db $03
+        db $08
+        db $03
+        db $00
+        db $00
+        db $00
+        ENDM
+MACRO METLOCATION
+        db $02
+        db $48
+        db $23
+        db $21
+        db $02
+        db $4B
+        db $03
+        db $A2
+        db $18
+        db $47
+        db $00
+        db $00
+        db $C0
+        db $45
+        db $00
+        db $03
+        db $ED
+        db $D2
+        db $03
+        db $08
+        db $CB
+        db $00
+        db $00
+        db $00
+        ENDM
 
 	Mystery_Event
 
@@ -238,4 +290,3 @@ Elite4:
 
 DataEnd:
 	EOF
-  	
