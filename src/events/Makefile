@@ -30,9 +30,11 @@ build/$(REGION)/78-C%.vpk: build/$(REGION)/78-C%.z80
 	../bin/nedc/v1.4/nevpk -c -i $< -o $@
 
 # Sub maps 78-CXXX-01.raw -> 78-CXXX so the tool output matches what make is looking for
+
 # TODO: Set fill and enable saving the program
+# -type 1 -region 1 -save 1 -fill 1 -name "xxx Deoxys"
 build/$(REGION)/78-C%-01.raw: build/$(REGION)/78-C%.vpk
-	../bin/nedc/v1.4/nedcmake -i $< -o $(subst -01.raw,,$@) -type 1 -region 1
+	../bin/nedc/v1.4/nedcmake -i $< -o $(subst -01.raw,,$@) -type 1 -region 1 -save 1 -fill 1 -name $(basename $(notdir $<))
 
 .PRECIOUS: build/$(REGION)/78-C%.tx build/$(REGION)/78-C%.raw
 
