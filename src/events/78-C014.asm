@@ -37,8 +37,8 @@ DeliveryInProcess: ; 1a0d
 	db "In-game Clock Adjustment\n"
  	db "delivery in Progress...\0"
 TicketDelivered: ; 1a2f
-	db "In-game Clock Adjustment delivered!\n"
-	db "\n"
+	db "Delivered! Press Left+Select+B\n"
+	db "at the title screen to activate!\n"
 	db "Press the A Button to resend.\n"
 	db "Press the B Button to cancel.\0"
 
