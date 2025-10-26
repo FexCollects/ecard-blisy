@@ -2,7 +2,7 @@ REGION ?= EN
 
 PAYLOADS := $(patsubst %.asm, build/$(REGION)/%.mev, $(filter-out payload/prologue.asm, $(wildcard payload/*.asm)))
 CARDS := $(patsubst %.asm, build/$(REGION)/%-01.raw, $(wildcard 78-C*.asm))
-	
+
 all: $(CARDS) 
 
 build/$(REGION)/payload/%.tx: payload/%.asm
@@ -30,21 +30,19 @@ build/$(REGION)/78-C%.vpk: build/$(REGION)/78-C%.z80
 	../bin/nedc/v1.4/nevpk -c -i $< -o $@
 
 # Sub maps 78-CXXX-01.raw -> 78-CXXX so the tool output matches what make is looking for
-
-# TODO: Set fill and enable saving the program
-# -type 1 -region 1 -save 1 -fill 1 -name "xxx Deoxys"
+#../bin/nedc/v1.4/nedcmake -i $< -o $(subst -01.raw,,$@) -type 1 -region 1
 build/$(REGION)/78-C%-01.raw: build/$(REGION)/78-C%.vpk
 	../bin/nedc/v1.4/nedcmake -i $< -o $(subst -01.raw,,$@) -type 1 -region 1 -save 1 -fill 1 -name $(basename $(notdir $<))
 
-.PRECIOUS: build/$(REGION)/78-C%.tx build/$(REGION)/78-C%.raw
+.PRECIOUS: build/$(REGION)/78-C%.tx build/$(REGION)/78-C%.z80 build/$(REGION)/78-C%.raw
 
 # Automatically create build dirs if missing
-# BUILD_DIRS=build build/payload/
-# $(info $(shell mkdir -p $(BUILD_DIRS)))
+BUILD_DIRS=build/EN/payload
+$(info $(shell mkdir -p $(BUILD_DIRS)))
 
 .PHONY: clean
 clean:
-	rm -rf build # && mkdir -p $(BUILD_DIRS)
+	rm -rf build && mkdir -p $(BUILD_DIRS)
 
 # Automatically generated dep files
 -include build/EN/*.d
